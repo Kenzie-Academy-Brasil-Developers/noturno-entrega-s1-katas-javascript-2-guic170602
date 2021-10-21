@@ -12,7 +12,6 @@ function multiply(x, n){
     for(let i=1; i<=x; i++) output = add(output,n)
     return output
 }
-
 // descomente a linha seguinte para testar sua função
 console.assert(multiply(4, 6) === 24, 'A função multiply não está funcionando como esperado');
 
@@ -45,13 +44,16 @@ console.assert(factorial(5) === 120, 'A função factorial não está funcionand
 function fibonacci(x) {
     let aux = 0
     let result = 1
-    let ax = result
-    while (ax<x){
-        ax = result
-        result = add(result,aux)
-        aux = ax 
+    for(let contador=1;contador<x;contador++){
+        let aux2=aux
+        aux = result
+        result = add(result,aux2)
+        
     }
+    console.log(result)
     return result
 }
-// descomente a linha seguinte para testar sua função
-console.assert(fibonacci(8) === 13, 'A função fibonacci não está funcionando como esperado');
+
+fibonacci(8)
+
+console.assert(fibonacci(7) === 13, 'A função fibonacci não está funcionando como esperado');
